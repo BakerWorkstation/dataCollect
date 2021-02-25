@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>数据运营报告</title>
+    <link rel="stylesheet" href="/static/business/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" href="/static/business/css/bootstrap.min.css">
+<style>
+ body {
+        padding-top: 20px;
+        padding-left: 150px;
+        padding-right: 150px;
+}
+</style>
+</head>
+<body>
+    <script src="/static/business/js/jquery-3.2.0.js"></script>
+    <script src="/static/business/js/bootstrap.min.js"></script>
+    <script src="/static/business/js/echarts-all.js"></script>
+<h4 class="text-warning text-center" style="font-size:28px">数据运营报告</h4></p>
+<p id="report_time" align="left" style="font-size:16px; padding-right:20px">报告生成时间</p>
+</br>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h4 class="text-warning text-left">
+				1 概况
+            </h4></br>
+			<h5 style="padding:20px;border-color: #ddd;border-style: solid; border-width: 1px" class="text-left">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据<input type="date" id="date" onchange="selectDate()" />当天运营数据总结。</p>
+                <button type="button"  onclick="downExcel()">下载 Excel</button>
+                
+			</h5>
+		</div>
+	</div>
+</div>
+
+</br>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h4 class="text-warning text-left">
+				PTD
+			</h4>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style="width: 90%">
+	<div class="row-fluid">
+		<div class="span12">
+			<table id="ptd_table" class="table table-hover table-bordered table-condensed">
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style="width: 95%">
+	<div class="row-fluid">
+		<div class="span12">
+			<!-- <h4 class="text-warning text-left">
+				PTD设备示意
+			</h4> -->
+			<h5 class="text-warning text-left">
+				ptd在线分布
+			</h5>
+		</div>
+	</div>
+</div>
+
+<div id="ptd_photo" style="height:300px;width: 900px"></div></br>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h4 class="text-warning text-left">
+				IEP
+			</h4>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style="width: 90%">
+	<div class="row-fluid">
+		<div class="span12">
+			<table id="iep_table" class="table table-hover table-bordered table-condensed">
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style="width: 95%">
+	<div class="row-fluid">
+		<div class="span12">
+			<!-- <h4 class="text-warning text-left">
+				IEP设备示意
+			</h4> -->
+			<h5 class="text-warning text-left">
+				iep在线分布
+			</h5>
+		</div>
+	</div>
+</div>
+
+<div id="iep_photo" style="height:300px;width: 900px"></div></br>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h4 class="text-warning text-left">
+				防火墙
+			</h4>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style="width: 90%">
+	<div class="row-fluid">
+		<div class="span12">
+			<table id="firewall_table" class="table table-hover table-bordered table-condensed">
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" style="width: 95%">
+	<div class="row-fluid">
+		<div class="span12">
+			<!-- <h4 class="text-warning text-left">
+				IEP设备示意
+			</h4> -->
+			<h5 class="text-warning text-left">
+				防火墙在线分布
+			</h5>
+		</div>
+	</div>
+</div>
+
+<div id="firewall_photo" style="height:300px;width: 900px"></div></br>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h4 class="text-warning text-left">
+				2 PTD与IEP交集资产
+			</h4></br>
+			<h5 class="text-warning text-left">
+				资产IP列表
+			</h5>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered table-hover" id="table">
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h4 class="text-warning text-left">
+				3 参考标准
+			</h4></br>
+			<h5 class="text-warning text-left">
+				巡检结果危险等级评定标准
+			</h5>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-hover table-bordered table-condensed">
+				<thead>
+					<tr class="info">
+						<th>
+							危险程度
+						</th>
+						<th>
+							严重程序说明
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							高
+						</td>
+						<td>
+							高危。。。
+						</td>
+					</tr>
+					<tr>
+						<td>
+							中
+						</td>
+						<td>
+							中危。。。
+						</td>
+					</tr>
+					<tr>
+						<td>
+							低
+						</td>
+						<td>
+							低危。。。
+						</td>
+					</tr>
+					<tr>
+						<td>
+							信息性
+						</td>
+						<td>
+							信息性
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h5 class="text-warning text-left">
+				建议
+			</h5>
+			<h5 class="text-left">
+				&nbsp;</p>
+			</h5></br></br>
+		</div>
+	</div>
+</div>
+
+</body>
+<script>
+function show(count){
+    var a = document.getElementById('show' + count)
+    var b = a.style.display;
+    var c = document.getElementById('ip' + count);
+    if(b == "none"){
+        a.style.display = "";
+        c.src = "/static/business/img/minus.gif";
+    }
+    else if(b == ""){
+        a.style.display = "none";
+        c.src = "/static/business/img/plus.gif";
+    }
+}
+
+window.onload=flush();
+function flush(){
+    var date = document.getElementById('date').valueAsDate = new Date();
+    work(date);
+}
+function work(date){
+	get_data(date);
+    ptd_photo();
+	iep_photo();
+	firewall_photo();
+    report();
+}
+function get_data(date){
+	var str1 = "/api/data/get";
+	var req = new XMLHttpRequest();
+	req.open("POST", str1, true);
+	req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    var tmpdict = JSON.stringify({"date": date});
+    //req.send(tmpdict);
+    //alert(tmpdict);
+	req.onreadystatechange = function() {
+		if(req.readyState == 4 && req.status == 200) {
+			res = eval('[' + req.responseText + ']')[0];
+			report_time = res["report_time"];
+			document.getElementById("report_time").innerHTML="报告生成时间  ->  " + report_time;
+			p_data = res["ptd"];
+			i_data = res["iep"];
+			f_data = res["firewall"];
+			//ptd_online = res["ptd_online"];
+			//iep_online = res["iep_online"];
+			ptd_data(p_data);
+			iep_data(i_data);
+			firewall_data(f_data);
+		}
+	}
+	req.send(tmpdict);
+}
+
+function ptd_data(p_data){
+	var tb = document.getElementById("ptd_table");
+    tb.innerHTML = "";
+	for(var i=0;i<p_data.length; i++)
+    {
+		var row = tb.insertRow(tb.FetchRowCount);
+		if (i==0){
+			row.style.backgroundColor = "#66B3FF";
+		}
+
+		var list = p_data[i];
+		console.log(list);
+		for(var j=0;j<list.length; j++)
+    	{
+			row.insertCell(j).innerHTML = list[j];
+		}
+	}
+}
+
+function iep_data(i_data){
+	var tb = document.getElementById("iep_table");
+    tb.innerHTML = "";
+	for(var i=0;i<i_data.length; i++)
+    {
+		var row = tb.insertRow(tb.FetchRowCount);
+		if (i==0){
+			row.style.backgroundColor = "#66B3FF";
+		}
+
+		var list = i_data[i];
+		console.log(list);
+		for(var j=0;j<list.length; j++)
+    	{
+			row.insertCell(j).innerHTML = list[j];
+		}
+	}
+}
+function firewall_data(f_data){
+	var tb = document.getElementById("firewall_table");
+    tb.innerHTML = "";
+	for(var i=0;i<f_data.length; i++)
+    {
+		var row = tb.insertRow(tb.FetchRowCount);
+		if (i==0){
+			row.style.backgroundColor = "#66B3FF";
+		}
+
+		var list = f_data[i];
+		console.log(list);
+		for(var j=0;j<list.length; j++)
+    	{
+			row.insertCell(j).innerHTML = list[j];
+		}
+	}
+}
+
+function report(flag){
+    var strSum = '<thead>' +
+               '<tr>' +
+                    '<th>' +
+                        'IP地址' +
+                    '</th>' +
+                    '<th>' +
+                        '主机名'+
+                    '</th>' +
+                    '<th>' +
+                        '操作系统' +
+                    '</th>' +
+                    '<th>' +
+                        '灾难事件' +
+                    '</th>' +
+                    '<th>' +
+                        '严重及警告事件' +
+                    '</th>' +
+                    '<th>' +
+                        '一般事件' +
+                    '</th>' +
+                '</tr>' +
+            '</thead>' +
+            '<tbody>';
+	var a = [{"ip": []}];
+    var ele = document.getElementById("table");
+    for(var i=0;i<a.length; i++)
+    {
+        var list = a[i];
+        strSum += '<tr class="danger"  onclick="show(' + (i+1) +')">' +
+                       '<td>' + 
+                           list["ip"] + 
+                       '</td>' +
+                       '<td>' +
+                           '<img id="ip' +
+                                 (i+1) + 
+                                 '"' + ' src="/static/business/img/plus.gif">' +
+                                 list["hostname"] +
+                       '</td>' +
+                       '<td>' +
+                           list["system"]  + 
+                       '</td>' +
+                       '<td>' +
+                           list["dis"] + 
+                       '</td>' +
+                       '<td>' +
+                           list["warning"] +
+                       '</td>' +
+                       '<td>' +
+                           list["common"] +
+    	               '</td>' +
+                   '</tr>' +
+                   '<tr style="display: none" id="show'+ (i+1) + '">' + 
+                       '<td width="19.7%"></td>' + 
+    '<td style="padding-left:20px"  class="expand" colspan="5">' +
+    '<div style="overflow-x: auto; overflow-y: auto; height: 500px"> <table style="white-space:pre-wrap;" class="table table-bordered" width="100%">' + 
+        '<tr>' +
+             '<th width="20%">主机IP</th>' +
+             '<td width="80%">' + list["ip"] + ';&nbsp</td>' +
+        '</tr>' +
+        '<tr>' +
+             '<th width="20%">主机所属</th>' +
+             '<td width="80%">' + list["groupname"] + ';&nbsp</td>' +
+        '</tr>' +
+        '<tr>' +
+             '<th width="20%">部署应用</th>' +
+             '<td width="80%">' +  ';&nbsp</td>' +
+        '</tr>' +
+        '<tr>' +
+             '<th width="20%">告警内容</th>' +
+             '<td width="80%">' + list["discript"]  + '</td>' +
+        '</tr>' +
+        '<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+		'<tr>' +
+             '<th width="20%">告警处理建议</th>' +
+             '<td width="80%">'  + ';&nbsp</td>' +
+        '</tr>' +
+    '</table></div>' +
+    '</td>' +
+    '</tr>';
+    }
+    strSum += '<tbody>';
+    ele.innerHTML = strSum;
+}
+
+function ptd_photo(){
+    var myChart = echarts.init(document.getElementById("ptd_photo"));
+    var option = {
+    title : {
+        text: '合计 7台ptd设备',
+        x:'right',
+        y: 'top',
+	fontSize: 12,
+	padding: 45,
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : 'right',
+        y : 'bottom',
+	padding: 25,
+        data:['10.255.190.2', '10.255.190.3', '10.255.49.100', '10.255.190.5', '10.255.190.6', '10.255.190.7', '10.255.190.8']
+    },
+    toolbox: {
+        show : false,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'在线',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:1, name:'10.255.190.2'},
+                {value:1, name:'10.255.190.3'},
+                {value:1, name:'10.255.49.100'},
+                {value:1, name:'10.255.190.5'},
+				{value:1, name:'10.255.190.6'},
+				{value:1, name:'10.255.190.7'},
+				{value:1, name:'10.255.190.8'}
+            ]
+        }
+    ]
+    };
+
+    // 为echarts对象加载数据
+    myChart.setOption(option);
+}
+function iep_photo(){
+    var myChart = echarts.init(document.getElementById("iep_photo"));
+    var option = {
+    title : {
+        text: '合计 2台iep设备',
+        x:'right',
+        y: 'top',
+	fontSize: 12,
+	padding: 75,
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : 'right',
+        y : 'bottom',
+	padding: 45,
+        data:['10.255.49.17', '10.255.52.122']
+    },
+    toolbox: {
+        show : false,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'在线',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:1, name:'10.255.49.17'},
+                {value:1, name:'10.255.52.122'}
+            ]
+        }
+    ]
+    };
+
+    // 为echarts对象加载数据
+    myChart.setOption(option);
+}
+function firewall_photo(){
+    var myChart = echarts.init(document.getElementById("firewall_photo"));
+    var option = {
+    title : {
+        text: '合计 3台防火墙设备',
+        x:'right',
+        y: 'top',
+	fontSize: 12,
+	padding: 65,
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : 'right',
+        y : 'bottom',
+	padding: 45,
+        data:['10.255.192.242', '10.0.0.17', '10.255.192.249']
+    },
+    toolbox: {
+        show : false,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'在线',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:1, name:'10.255.192.242'},
+                {value:1, name:'10.0.0.17'},
+				{value:1, name:'10.255.192.249'}
+            ]
+        }
+    ]
+    };
+
+    // 为echarts对象加载数据
+    myChart.setOption(option);
+}
+function selectDate(){
+    var date = document.getElementById("date").value;
+    work(date);
+}
+function downExcel(){
+    var date = document.getElementById("date").value;
+    var url='/api/data/download/excel?date=' + date ;
+    window.location.href=url;
+}
+</script>
+</html>

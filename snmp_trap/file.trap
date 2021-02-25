@@ -1,0 +1,20 @@
+nginx-1
+UDP: [10.255.52.87]:39561->[10.255.52.87]:162
+DISMAN-EVENT-MIB::sysUpTimeInstance 12:17:36:02.41
+SNMPv2-MIB::snmpTrapOID.0 SNMPv2-SMI::dod.2.4.2.2021.2521.1
+SNMPv2-MIB::sysLocation.0 this is test3
+nginx-1
+UDP: [10.255.52.87]:39561->[10.255.52.87]:162
+DISMAN-EVENT-MIB::sysUpTimeInstance 12:17:36:02.41
+SNMPv2-MIB::snmpTrapOID.0 SNMPv2-SMI::dod.2.4.2.2021.2521.1
+SNMPv2-MIB::sysLocation.0 this is test3
+nginx-1
+UDP: [10.255.52.87]:6147->[10.255.52.87]:162
+DISMAN-EVENT-MIB::sysUpTimeInstance 12:17:36:05.13
+SNMPv2-MIB::snmpTrapOID.0 SNMPv2-SMI::dod.2.4.2.2021.2521.1
+SNMPv2-MIB::sysLocation.0 this is test3
+nginx-1
+UDP: [10.255.52.87]:6147->[10.255.52.87]:162
+DISMAN-EVENT-MIB::sysUpTimeInstance 12:17:36:05.13
+SNMPv2-MIB::snmpTrapOID.0 SNMPv2-SMI::dod.2.4.2.2021.2521.1
+SNMPv2-MIB::sysLocation.0 this is test3

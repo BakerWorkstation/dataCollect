@@ -1,0 +1,789 @@
+{
+	"hbase_rowkey": "",
+	"Used_by_ES_src": {
+		"source_endpoint_ip": "",
+		"source_endpoint_domain": "",
+		"source_endpoint_url": "",
+		"source_endpoint_port": "",
+		"source_endpoint_ip_cp": "",
+		"source_load_md5": "",
+		"source_load_filename": "",
+		"source_load_filepath": "",
+		"source_load_filebytes": "",
+		"source_load_filetype": "",
+		"source_load_vulne_id": [],
+		"source_load_attack_action": [],
+		"source_load_attack_v_name": "",
+		"source_load_attack_v_type": "",
+		"source_load_attack_v_family": "",		
+		"direction": ""
+	},
+	"Used_by_ES_dst": {
+		"purpose_endpoint_ip": "",
+		"purpose_endpoint_domain": "",
+		"purpose_endpoint_url": "",
+		"purpose_endpoint_port": "",
+		"purpose_endpoint_ip_cp": "",
+		"purpose_load_md5": "",
+		"purpose_load_filename": "",
+		"purpose_load_filepath": "",
+		"purpose_load_filebytes": "",
+		"purpose_load_filetype": "",
+		"purpose_load_vulne_id": [],
+		"purpose_load_attack_action": [],
+		"purpose_load_attack_v_name": "",
+		"purpose_load_attack_v_type": "",
+		"purpose_load_attack_v_family": "",	
+		"direction": ""
+	},
+	"Used_by_ES_ExtendInfo": {
+		"alert": "",
+		"is_malicious": "",
+		"detect_pro_id": "",
+		"rule_id": ""
+	},
+	"middle_ground":"",
+	"threat_info": {
+		"eventlog_id": "",
+		"sponsor_time": "",
+		"event_type": {
+			"first_type": "",
+			"second_type": "",
+			"third_type": "",
+			"fourth_type": ""
+		},
+		"source_endpoint": {
+			"ip_info": {
+				"ip": "",
+				"port": "",
+				"mac": "",
+				"ipv6": "",
+				"ip_country": "",
+				"ip_city": "",
+				"ip_region": "",
+				"ip_cp": "",
+				"isp": "",
+				"ip_longitude": "",
+				"ip_latitude": ""
+			},
+			"url": "",
+			"domain_info": {
+				"domain": "",
+				"create_time": "",
+				"dead_time": "",
+				"update_time": "",
+				"lastupdate_time": "",
+				"registry": {
+					"reg_people": "",
+					"reg_company": "",
+					"reg_street": "",
+					"reg_city": "",
+					"reg_country": "",
+					"reg_telephone": "",
+					"reg_mailbox": "",
+					"reg_fax": "",
+					"reg_note": ""
+				},
+				"manage": {
+					"man_name": "",
+					"man_organization": "",
+					"man_street": "",
+					"man_city": "",
+					"man_country": "",
+					"man_mailbox": "",
+					"man_telephone": "",
+					"man_fax": "",
+					"man_note": ""
+				}
+			},
+			"label": [],
+			"detect": {
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				}
+			},
+			"asset_detail": {
+				"asset_id": "",
+				"os": "",
+				"ip_group": [{
+					"ip": "",
+					"mac": ""
+				}],
+				"unit": "",
+				"network_struct": [],
+				"type": "",
+				"ports": [],
+				"asset_level": "",
+				"people": {
+					"user": "",
+					"manager": ""
+				},
+				"applications": []
+			},
+			"status": "",
+			"status_des": ""
+		},
+		"carrier": {
+			"carrier_type": "",
+			"value": "",
+			"protocol": "",
+			"info": {
+				"data_info": {
+					"dns_info": {
+						"message_type": "",
+						"record": {
+							"record_type": "",
+							"pro_info": "",
+							"alias": "",
+							"return_data": ""
+						}
+					},
+					"email_info": {
+						"from_ip": "",
+						"from": "",
+						"to": "",
+						"sender": "",
+						"sub": "",
+						"content": {
+							"text": "",
+							"text_url": []
+						},
+						"file": [{
+							"filehash": {
+								"md5": "",
+								"sha1": "",
+								"sha256": ""
+							},
+							"file_name": "",
+							"file_format": ""
+						}]
+					},
+					"ftp_info": {
+						"upload": {
+							"bytes": "",
+							"direct": "",
+							"file_name": "",
+							"file_type": "",
+							"file_hash": {
+								"md5": "",
+								"sha1": "",
+								"sha256": ""
+							}
+						},
+						"download": {
+							"bytes": "",
+							"direct": "",
+							"file_name": "",
+							"file_type": "",
+							"file_hash": {
+								"md5": "",
+								"sha1": "",
+								"sha256": ""
+							}
+						}
+					},
+					"http_info": {
+						"request": {
+							"header": {
+								"method": "",
+								"URL": "",
+								"version": "",
+								"Accept": "",
+								"Accept-Encoding": "",
+								"Accept-Language": "",
+								"Connection": "",
+								"Contern-Type": "",
+								"Cookie": "",
+								"Host": "",
+								"Referer": "",
+								"User-Agent": ""
+							},
+							"body": {
+								"bytes": "",
+								"direction": "",
+								"file_name": "",
+								"file_type": "",
+								"file_hash": {
+									"md5": "",
+									"sha1": "",
+									"sha256": ""
+								}
+							}
+						},
+						"response": {
+							"header": {
+								"method": "",
+								"URL": "",
+								"version": "",
+								"Accept": "",
+								"Accept-Encoding": "",
+								"Accept-Language": "",
+								"Connection": "",
+								"Contern-Type": "",
+								"Cookie": "",
+								"Host": "",
+								"Referer": "",
+								"User-Agent": ""
+							},
+							"body": {
+								"bytes": "",
+								"direction": "",
+								"file_name": "",
+								"file_type": "",
+								"filehash": {
+									"md5": "",
+									"sha1": "",
+									"sha256": ""
+								}
+							}
+						}
+					},
+					"smb_info": {
+						"upload": {
+							"bytes": "",
+							"direct": "",
+							"file_name": "",
+							"file_type": "",
+							"file_hash": {
+								"md5": "",
+								"sha1": "",
+								"sha256": ""
+							}
+						},
+						"download": {
+							"bytes": "",
+							"direct": "",
+							"file_name": "",
+							"file_type": "",
+							"file_hash": {
+								"md5": "",
+								"sha1": "",
+								"sha256": ""
+							}
+						}
+					},
+					"smtp_info": {}
+				},
+				"pcap": ""
+			}
+		},
+		"source_load": [{
+			"fprocess_pid": "",
+			"fprocess_hash": {
+				"md5": "",
+				"sha1": "",
+				"sha256": ""
+			},
+			"fprocess_path": "",
+			"o_filename": "",
+			"file_format": "",
+			"size": "",
+			"v_name": "",
+			"v_type": "",
+			"v_family": "",
+			"platform": "",
+			"attack_action": [],
+			"vulne": [{
+				"vulne_id": "",
+				"vulne_name": "",
+				"open_time": "",
+				"vulne_level": "",
+				"vulne_type": "",
+				"for_products": []
+			}],
+			"level": "",
+			"dispose": "",
+			"download_time": "",
+			"run_time": "",
+			"loader_label": [],
+			"loader_behavior_label": [],
+			"defense_state": "",
+			"detect": {
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				}
+			}
+		}],
+		"sponsor_behavior": {
+			"attack_info": {
+				"first_type": "",
+				"second_type": "",
+				"third_type": "",
+				"fourth_type": ""
+			},
+			"exploit_vulnerability": {
+				"vulne_id": "",
+				"vulne_name": "",
+				"open_time": "",
+				"vulne_level": "",
+				"vulne_type": "",
+				"for_products": []
+			},
+			"detect": {
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				}
+			},
+			"dispose": "",
+			"attack_label": {
+				"attack": [{
+					"tactic": "",
+					"techniques": "",
+					"tactic_number": "",
+					"techniques_number": ""
+				}],
+				"nsacss": [{
+					"stage": "",
+					"objective": "",
+					"action": "",
+					"stage_number": ""
+				}]
+			},
+			"xw_label":[],
+			"xw_name":[]
+		},
+		"purpose_endpoint": {
+			"ip_info": {
+				"ip": "",
+				"port": "",
+				"mac": "",
+				"ipv6": "",
+				"ip_country": "",
+				"ip_city": "",
+				"ip_region": "",
+				"ip_cp": "",
+				"isp": "",
+				"ip_longitude": "",
+				"ip_latitude": ""
+			},
+			"url": "",
+			"domain_info": {
+				"domain": "",
+				"create_time": "",
+				"dead_time": "",
+				"update_time": "",
+				"lastupdate_time": "",
+				"registry": {
+					"reg_people": "",
+					"reg_company": "",
+					"reg_street": "",
+					"reg_city": "",
+					"reg_country": "",
+					"reg_telephone": "",
+					"reg_mailbox": "",
+					"reg_fax": "",
+					"reg_note": ""
+				},
+				"manage": {
+					"man_name": "",
+					"man_organization": "",
+					"man_street": "",
+					"man_city": "",
+					"man_country": "",
+					"man_mailbox": "",
+					"man_telephone": "",
+					"man_fax": "",
+					"man_note": ""
+				}
+			},
+			"label": [],
+			"detect": {
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				}
+			},
+			"asset_detail": {
+				"asset_id": "",
+				"os": "",
+				"ip_group": [{
+					"ip": "",
+					"mac": ""
+				}],
+				"unit": "",
+				"network_struct": [],
+				"type": "",
+				"ports": [],
+				"asset_level": "",
+				"people": {
+					"user": "",
+					"manager": ""
+				},
+				"applications": []
+			},
+			"status": "",
+			"status_des": ""
+		},
+		"purpose_load": {
+			"sprocess_pid": "",
+			"p_load_cmd": "",
+			"p_load_extend_info_from_cmd": [],
+			"p_load_behavior_info_additional": "",
+			"behavior_initiator": "",
+			"sfile_hash": {
+				"md5": "",
+				"sha1": "",
+				"sha256": ""
+			},
+			"sprocess_path": "",
+			"o_filename": "",
+			"file_format": "",
+			"size": "",
+			"v_name": "",
+			"v_type": "",
+			"v_family": "",			
+			"platform": "",
+			"attack_action": [],
+			"vulne": [{
+				"vulne_id": "",
+				"vulne_name": "",
+				"open_time": "",
+				"vulne_level": "",
+				"vulne_type": "",
+				"for_products": []
+			}],
+			"level": "",
+			"dispose": "",
+			"download_time": "",
+			"run_time": "",
+			"loader_label": [],
+			"loader_behavior_label": [],
+			"defense_state": "",
+			"detect": {
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				}
+			}
+		},
+		"extend_details": {
+			"attack_info": {
+				"from_ip": {
+					"ip": "",
+					"country": "",
+					"city": "",
+					"region": "",
+					"units": "",
+					"operators": "",
+					"ASN": "",
+					"longitude": "",
+					"latitude": ""
+				},
+				"url": "",
+				"hit_beacon": "",
+				"domain": "",
+				"intelligence_info": {
+					"attacker_id": "",
+					"type": "",
+					"attacker": "",
+					"country": "",
+					"behavior_info": {
+						"act_name": "",
+						"act_time": "",
+						"act_description": ""
+					},
+					"loader_Carrier_hit": "",
+					"loader_Carrier_his": [{
+						"type": "",
+						"value": "",
+						"protocol": "",
+						"loa_other": {
+							"domain_info": {
+								"domain": "",
+								"create_time": "",
+								"dead_time": "",
+								"update_time": "",
+								"lastupdate_time": "",
+								"registry": {
+									"reg_people": "",
+									"reg_company": "",
+									"reg_street": "",
+									"reg_city": "",
+									"reg_country": "",
+									"reg_telephone": "",
+									"reg_mailbox": "",
+									"reg_fax": "",
+									"reg_note": ""
+								},
+								"manage": {
+									"man_name": "",
+									"man_organization": "",
+									"man_street": "",
+									"man_city": "",
+									"man_country": "",
+									"man_mailbox": "",
+									"man_telephone": "",
+									"man_fax": "",
+									"man_note": ""
+								}
+							},
+							"ip_position": {
+								"ip": "",
+								"country": "",
+								"city": "",
+								"region": "",
+								"units": "",
+								"operators": "",
+								"ASN": "",
+								"longitude": "",
+								"latitude": ""
+							}
+						}
+					}],
+					"other_attacker_label": []
+				},
+				"attacker_label": []
+			},
+			"loader_info": [{
+				"process_pid": "",
+				"file_hash": {
+					"md5": "",
+					"sha1": "",
+					"sha256": ""
+				},
+				"process_path": "",
+				"o_filename": "",
+				"size": "",
+				"file_format": "",
+				"v_name": "",
+				"v_type": "",
+				"v_family": "",
+				"platform": "",
+				"level": "",
+				"download_time": "",
+				"run_time": "",
+				"label": [],
+				"attack_action": [],
+				"vulne": [{
+					"vulne_id": "",
+					"vulne_name": "",
+					"open_time": "",
+					"vulne_level": "",
+					"vulne_type": "",
+					"for_products": []
+				}],
+				"relation": {
+					"fprocess_pid": "",
+					"o_filename": "",
+					"fprocess_path": "",
+					"ffile_hash": {
+						"md5": "",
+						"sha1": "",
+						"sha256": ""
+					},
+					"sprocess_pid": "",
+					"p_filename": "",
+					"sprocess_path": "",
+					"sfile_hash": {
+						"md5": "",
+						"sha1": "",
+						"sha256": ""
+					}
+				},
+				"version_info": {
+					"author": "",
+					"update_time": "",
+					"company": "",
+					"create_time": "",
+					"file_version": "",
+					"last_updater": "",
+					"last_visit_time": ""
+				},
+				"certificate_info": {
+					"file_signature": "",
+					"file_signature_time": ""
+				},
+				"dynamic_result": ""
+			}],
+			"vulne_info": [{
+				"vulne_id": "",
+				"vulne_name": "",
+				"open_time": "",
+				"vulne_level": "",
+				"vulne_type": "",
+				"for_products": [],
+				"poc_info": "",
+				"patch_info": [{
+					"patch_id": "",
+					"patch_name": "",
+					"open_time": "",
+					"patch_level": "",
+					"patch_label": [],
+					"cvelist": [],
+					"size": "",
+					"patch_md5": "",
+					"patch_rules": "",
+					"download_url": ""
+				}]
+			}],
+			"detector_info": [{
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				},
+				"d_proinfo": {
+					"unit": "",
+					"safety_region": "",
+					"network_region": "",
+					"location": "",
+					"people": ""
+				},
+				"detect_obj": ""
+			}]
+		},
+		"custom_log": {}
+	},
+
+	"Vulnerability_info": {
+		"id": "",
+		"time": {
+			"attack_time": "",
+			"end_time": ""
+		},
+		"discoverer": {
+			"ip": "",
+			"product": "",
+			"productinfo": {
+				"unit": "",
+				"domain": "",
+				"safety_zone": "",
+				"phy_location": "",
+				"contacts": ""
+			}
+		},
+		"discover_way": {
+			"name": "",
+			"describe": "",
+			"rule_info": {
+				"id": "",
+				"detect_base": ""
+			}
+		},
+		"fragile_node": {
+			"type": "",
+			"name": "",
+			"version": "",
+			"for_asset": {
+				"ip_info": {
+					"ip": "",
+					"country": "",
+					"city": "",
+					"region": "",
+					"units": "",
+					"operators": "",
+					"ASN": "",
+					"longitude": "",
+					"latitude": ""
+				},
+				"asset_detail": {
+					"asset_id": "",
+					"os": "",
+					"ip_group": [{
+						"ip": "",
+						"mac": ""
+					}],
+					"unit": "",
+					"network_struct": [],
+					"type": "",
+					"ports": [],
+					"label": "",
+					"asset_level": "",
+					"people": {
+						"user": "",
+						"manager": ""
+					},
+					"applications": [],
+					"uptime": ""
+				}
+			},
+			"describe": ""
+		},
+		"vulnerable_point": [{
+			"vulnerable_point_list": [],
+			"vulnerability_type": {
+				"first_type": "",
+				"second_type": "",
+				"third_type": ""
+			},
+			"level": "",
+			"vulnerability_name": "",
+			"vulnerability_describe": ""
+		}],
+		"vulnerability_status": {
+			"vulne_repair": "",
+			"vulne_discover": "",
+			"vulne_confirm": "",
+			"vulne_ease": ""
+		},
+		"extend_details": {
+			"detector_info": {
+				"detect_time": "",
+				"detect_pro_id": "",
+				"detect_pro": "PTD",
+				"detect_rule": {
+					"detect_base": "",
+					"detect_id": ""
+				},
+				"d_proinfo": {
+					"unit": "",
+					"safety_region": "",
+					"network_region": "",
+					"location": "",
+					"people": ""
+				}
+			},
+			"vulne_info": [{
+				"vulne_id": "",
+				"vulne_name": "",
+				"open_time": "",
+				"vulne_level": "",
+				"vulne_type": "",
+				"vulne_description": "",
+				"for_products": [],
+				"poc_info": "",
+				"patch_info": [{
+					"patch_id": "",
+					"patch_name": "",
+					"open_time": "",
+					"patch_level": "",
+					"patch_label": [],
+					"cvelist": [],
+					"size": "",
+					"patch_md5": "",
+					"patch_rules": "",
+					"download_url": ""
+				}]
+			}],
+			"vulnerability_info": {
+				"dispose_time": "",
+				"disposer": "",
+				"vulnerability_status": ""
+			}
+		}
+	},
+	"abnormal": {},
+	"malfunction_and_performance": {},
+	"NetworkBehavior-netflow": {},
+	"Violation": {}
+}
